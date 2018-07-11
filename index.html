@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>tac-tic-toe</title>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+
+<body>
+    <div id="table">
+        <table>
+            <tr>
+                <td id="0" v-on:click="click(0)">{{arr[0].icon}}</th>
+                    <td id="1" v-on:click="click(1)">{{arr[1].icon}}</th>
+                        <td id="2" v-on:click="click(2)">{{arr[2].icon}}</th>
+            </tr>
+            <tr>
+                <td id="3" v-on:click="click(3)">{{arr[3].icon}}</td>
+                <td id="4" v-on:click="click(4)">{{arr[4].icon}}</td>
+                <td id="5" v-on:click="click(5)">{{arr[5].icon}}</td>
+            </tr>
+            <tr>
+                <td id="6" v-on:click="click(6)">{{arr[6].icon}}</td>
+                <td id="7" v-on:click="click(7)">{{arr[7].icon}}</td>
+                <td id="8" v-on:click="click(8)">{{arr[8].icon}}</td>
+            </tr>
+        </table>
+        <h1>{{winmessage}}</h1>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
