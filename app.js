@@ -129,3 +129,5 @@ var app = new Vue({
 
     }
 })
+
+app.opponentMove();
