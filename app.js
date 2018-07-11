@@ -39,8 +39,11 @@ var app = new Vue({
             if (this.arr[x].isClicked === false) {
                 this.arr[x].icon = "O";
                 this.arr[x].isClicked = true;
-                this.opponentMove();
                 this.win();
+                if (this.winMessage === "") {
+                    this.opponentMove();
+                }
+
             }
         },
 
@@ -62,8 +65,8 @@ var app = new Vue({
         },
 
 
-          win: function (){
-        	console.log("xxx");
+        win: function() {
+            console.log("xxx");
 
             for (var i = 0; i < winOrLoseCondition.length; i++) {
 
@@ -73,17 +76,17 @@ var app = new Vue({
 
                     console.log("win");
 
-                    this.click= function(){};
+                    this.click = function() {};
 
-                    this. winmessage = "You win!!";
+                    this.winMessage = "You win!!";
 
                 }
 
             }
         },
 
-        lose: function (){
-        	console.log("xxx");
+        lose: function() {
+            console.log("xxx");
 
             for (var i = 0; i < winOrLoseCondition.length; i++) {
 
@@ -93,9 +96,9 @@ var app = new Vue({
 
                     console.log("lose");
 
-                    this.click= function(){};
+                    this.click = function() {};
 
-                    this. winmessage = "You Lose!!";
+                    this.winMessage = "You Lose!!";
 
                 }
 
@@ -106,8 +109,8 @@ var app = new Vue({
 
     computed: {
 
-        win: function (){
-        	console.log("xxx");
+        win: function() {
+            console.log("xxx");
 
             for (var i = 0; i <= winOrLoseCondition.length; i++) {
 
@@ -117,7 +120,7 @@ var app = new Vue({
 
                     console.log("win");
 
-                    this.click= function(){};
+                    this.click = function() {};
 
                 }
 
