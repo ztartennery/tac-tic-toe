@@ -39,7 +39,7 @@ var app = new Vue({
             if (this.arr[x].isClicked === false) {
                 this.arr[x].icon = "O";
                 this.arr[x].isClicked = true;
-                this.win();
+                this.isWin();
                 if (this.winMessage === "") {
                     this.opponentMove();
                 }
@@ -56,7 +56,7 @@ var app = new Vue({
             var opponentCell = notClickedArr[Math.floor(Math.random() * notClickedArr.length)];
             this.arr[opponentCell].icon = "X";
             this.arr[opponentCell].isClicked = "true";
-            this.lose();
+            this.isLose();
 
 
 
@@ -65,7 +65,7 @@ var app = new Vue({
         },
 
 
-        win: function() {
+        isWin: function() {
             console.log("xxx");
 
             for (var i = 0; i < winOrLoseCondition.length; i++) {
@@ -85,7 +85,7 @@ var app = new Vue({
             }
         },
 
-        lose: function() {
+        isLose: function() {
             console.log("xxx");
 
             for (var i = 0; i < winOrLoseCondition.length; i++) {
@@ -104,30 +104,30 @@ var app = new Vue({
 
             }
         }
-    },
-
-
-    computed: {
-
-        win: function() {
-            console.log("xxx");
-
-            for (var i = 0; i <= winOrLoseCondition.length; i++) {
-
-                var winRow = winOrLoseCondition[i];
-
-                if (this.arr[winRow[0]].icon === "O" && this.arr[winRow[1]].icon === "O" && this.arr[winRow[2]].icon === "O") {
-
-                    console.log("win");
-
-                    this.click = function() {};
-
-                }
-
-            }
-        }
-
     }
+
+
+    // computed: {
+
+    //     win: function() {
+    //         console.log("xxx");
+
+    //         for (var i = 0; i <= winOrLoseCondition.length; i++) {
+
+    //             var winRow = winOrLoseCondition[i];
+
+    //             if (this.arr[winRow[0]].icon === "O" && this.arr[winRow[1]].icon === "O" && this.arr[winRow[2]].icon === "O") {
+
+    //                 console.log("win");
+
+    //                 this.click = function() {};
+
+    //             }
+
+    //         }
+    //     }
+
+    // }
 })
 
 app.opponentMove();
